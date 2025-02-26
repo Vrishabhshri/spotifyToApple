@@ -15,6 +15,6 @@ In terminal of this directory:
 Create a .env file in this project directory and add the following variables that can be found
 in the Spotify Developer Program that comes with every Premium account
 
-SPOTIFY_CLIENT_ID=your_client_id
-SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_CLIENT_ID=your_client_id \\
+SPOTIFY_CLIENT_SECRET=your_client_secret \\
 SPOTIFY_REDIRECT_URI=your_redirect_uri
