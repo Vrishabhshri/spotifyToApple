@@ -41,28 +41,14 @@ for song in songs:
 
     try:
 
-        print("Starting try")
-
         # Wait for the results to load
         WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//div[@data-testid='top-search-result']")))
 
-        print("Waited until load")
-
         # Find the first song result in the grid
         song_box = driver.find_element(By.XPATH, "//div[@data-testid='top-search-result']")
-        print("Found song box")
-
-        # Hover over the song box to display the "+" button
-        # ActionChains(driver).move_to_element(song_box).perform()
-        # time.sleep(0.5)  # Wait briefly for the button to appear
-
-        print("Hover")
 
         # Click the "+" button (Add to Library)
         add_button = driver.find_element(By.XPATH, "//button[@data-testid='add-to-library-button']")
-
-        print("Found add button")
-
         add_button.click()
         print(f"✅ Added: {song}")
 
