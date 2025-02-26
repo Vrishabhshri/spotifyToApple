@@ -18,7 +18,10 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 
 def get_liked_songs():
     songs = []
-    results = sp.current_user_saved_tracks(limit=50, offset=950) # change to 1000
+    # Only able to receive 50 songs at a time so my recommendation is load the first 50 songs
+    # make a new temp file and continue to put each iteration of 50 songs in there
+    # then load them all back in "spotify_liked_songs"
+    results = sp.current_user_saved_tracks(limit=50, offset=0)
     for item in results['items']:
         track = item['track']
         songs.append(f"{track['name']} {track['artists'][0]['name']}")
